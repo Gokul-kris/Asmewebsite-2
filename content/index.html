@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <span>
+        <a href="/" style="text-decoration: none;"><h2 id="back">Go Back</h2></a>
+        <h1 id="title">All Posts</h1>
+        <p></p>
+    </span>
+    <div id="container">
+        <h1 id="loading">Please Wait..</h1>
+    </div>
+    <div style="height: 100px;"></div>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <script src="/content/config.js"></script>
+    <script src="/content/main.js"></script>
+    <script src="/content/index.js"></script>
+
+</body>
+<style>
+    body,html{ 
+        height: 100%;
+        margin: 0%;
+        color: #232d39;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    h1{
+        margin-right: 30px;
+    }
+    #container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 600px));
+        gap: 30px;
+        justify-content: space-evenly;
+    }
+    #loading{
+        margin: auto;
+    }
+    #title{
+        text-align: center;
+        font-size: xxx-large;
+    }
+    .event{
+        display: flex;
+        margin: 10px auto;
+        width: 100%;
+        flex-direction: column;
+        border-radius: 20px;
+        box-shadow: 0px 2px 9px 0px #9f9c9c;
+        align-items: flex-end;
+        height: fit-content;
+        cursor: pointer;
+        transition: all 500ms;
+        padding-bottom: 30px;
+    }
+    .event:hover{
+        transform: scale(1.05);
+    }
+    .poster{
+        border-radius: 20px 20px 0px 0px;
+        min-height: 200px;
+        width: 100%;
+    }
+    
+    .chip{
+        margin: 20px;
+        width: fit-content;
+        height: fit-content;
+        background-color: gray;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+    }
+    .card-footer{
+        display: flex;
+        align-content: space-between;
+        width: 100%;
+    }
+
+    #back{
+        color:white;
+        align-self: center;
+        text-decoration: none;
+        background-color: #232d39;
+        padding: 12px;
+        margin: 0px;
+        width: fit-content;
+    }
+    .write-up{
+        white-space: pre-line;
+        margin: 20px;
+        color: #444e5a;
+    }
+    .link{
+        text-decoration: none;
+        background-color: rgb(0, 110, 255);
+        color: white;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+</style>
+</html>
